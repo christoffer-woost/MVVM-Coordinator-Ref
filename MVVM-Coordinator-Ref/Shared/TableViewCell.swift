@@ -1,16 +1,25 @@
 //
-//  View.swift
+//  TableViewCell.swift
 //  MVVM-Coordinator-Ref
 //
 //  Created by Christoffer Woost on 03.07.21.
 //
 
+import Foundation
+
+
 import UIKit
 
-class View: UIView {
+class TableViewCell: UITableViewCell {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        createSubviews()
+        NSLayoutConstraint.activate(createConstraints())
+    }
     
     init() {
-        super.init(frame: .zero)
+        super.init(style: .default, reuseIdentifier: Self.className)
         createSubviews()
         NSLayoutConstraint.activate(createConstraints())
     }

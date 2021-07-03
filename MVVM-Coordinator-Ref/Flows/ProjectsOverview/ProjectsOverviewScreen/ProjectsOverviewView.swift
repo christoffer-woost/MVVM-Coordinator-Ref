@@ -16,21 +16,21 @@ class ProjectsOverviewView: View {
     
     lazy var tableView: UITableView = {
         let v = UITableView(frame: .zero, style: .plain)
-        v.backgroundColor = .white
+        v.backgroundColor = .systemGroupedBackground
         v.separatorStyle = .none
         v.refreshControl = refreshControl
         return v
     }()
     
-    override var customConstraints: [NSLayoutConstraint] {[
+    override func createSubviews() {
+        add(subview: tableView)
+    }
+    
+    override func createConstraints() -> [NSLayoutConstraint] {[
         tableView.topAnchor.constraint(equalTo: topAnchor),
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
     ]}
-    
-    override func createSubviews() {
-        addSubview(tableView)
-    }
     
 }

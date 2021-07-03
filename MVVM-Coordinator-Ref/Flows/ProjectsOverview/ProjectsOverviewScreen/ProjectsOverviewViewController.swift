@@ -22,7 +22,11 @@ class ProjectsOverviewViewController: ViewController<ProjectsOverviewView> {
     }
     
     override func configure() {
+        title = "Repositories"
+        
         customView.tableView.dataSource = self
+        customView.tableView.delegate = self
+        customView.tableView.register(ProjectTableViewCell.self, forCellReuseIdentifier: ProjectTableViewCell.className)
         
         viewModel.$projects
             .delay(for: 0, scheduler: DispatchQueue.main)
@@ -70,9 +74,30 @@ extension ProjectsOverviewViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.projects[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProjectTableViewCell.className) as! ProjectTableViewCell
+        let data = viewModel.projects[indexPath.row]
+        cell.titleLabel.text = data.name
+        cell.messageLabel.text = data.owner.login
+        
+        let starAttachment = NSTextAttachment()
+        starAttachment.image = UIImage(systemName: "star")
+        let starString = NSMutableAttributedString()
+        starString.append(NSAttributedString(attachment: starAttachment))
+        starString.append(NSAttributedString(string: " \(data.stargazersCount)"))
+        cell.starsLabel.attributedText = starString
+        
+        cell.watchersLabel.text = data.createdAt?.dateString ?? ""
+        
         return cell
+    }
+    
+}
+
+extension ProjectsOverviewViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = viewModel.projects[indexPath.row]
+        viewModel.didSelectProject.send(data)
     }
     
 }

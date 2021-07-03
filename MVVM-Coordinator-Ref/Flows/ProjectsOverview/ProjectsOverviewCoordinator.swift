@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class ProjectsOverviewCoordinator: Coordinator {
+    
+    private var cancellables: Set<AnyCancellable> = .init()
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
@@ -20,10 +23,19 @@ class ProjectsOverviewCoordinator: Coordinator {
         showProjectsOverviewScreen()
     }
     
-    func showProjectsOverviewScreen() {
+    private func showProjectsOverviewScreen() {
         let viewModel = ProjectsOverviewViewModel()
+        viewModel.didSelectProject
+            .sink { [weak self] item in
+                self?.showProjectCoordinator(with: item)
+            }
+            .store(in: &cancellables)
         let vc = ProjectsOverviewViewController(viewModel: viewModel)
         navigationController.setRoot(viewController: vc)
+    }
+    
+    private func showProjectCoordinator(with item: Item) {
+        
     }
     
 }

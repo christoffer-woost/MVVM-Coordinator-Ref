@@ -13,6 +13,8 @@ struct Project: Decodable {}
 class ProjectsOverviewViewModelInterface: ObservableObject {
     @Published var projects: [Item] = []
     
+    var didSelectProject: PassthroughSubject<Item, Never> = .init()
+    
     func fetch() {}
     func startUpdating() {}
     func endUpdating() {}

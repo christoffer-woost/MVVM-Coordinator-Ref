@@ -26,6 +26,11 @@
 		2449B69E2690B24A007B9CE1 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B69D2690B24A007B9CE1 /* UIControl+Extensions.swift */; };
 		2449B6A12690D3E6007B9CE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A02690D3E6007B9CE1 /* APIClient.swift */; };
 		2449B6A32690E40E007B9CE1 /* RepositorySearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A22690E40E007B9CE1 /* RepositorySearchResponseModel.swift */; };
+		2449B6A52690FB25007B9CE1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A42690FB25007B9CE1 /* TableViewCell.swift */; };
+		2449B6A72690FBB7007B9CE1 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A62690FBB7007B9CE1 /* NSObject+Extensions.swift */; };
+		2449B6A92690FC0A007B9CE1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A82690FC0A007B9CE1 /* ProjectTableViewCell.swift */; };
+		2449B6AB2690FD1F007B9CE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */; };
+		2449B6AD26910BEA007B9CE1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		2449B69D2690B24A007B9CE1 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		2449B6A02690D3E6007B9CE1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2449B6A22690E40E007B9CE1 /* RepositorySearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchResponseModel.swift; sourceTree = "<group>"; };
+		2449B6A42690FB25007B9CE1 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2449B6A62690FBB7007B9CE1 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		2449B6A82690FC0A007B9CE1 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 			children = (
 				2449B6952690A700007B9CE1 /* App */,
 				2449B68E26909F69007B9CE1 /* ProjectsOverview */,
+				2449B6AE26910F72007B9CE1 /* ProjectDetails */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 			children = (
 				2449B68626909C6E007B9CE1 /* ProjectsOverviewViewController.swift */,
 				2449B68826909C9F007B9CE1 /* ProjectsOverviewView.swift */,
+				2449B6A82690FC0A007B9CE1 /* ProjectTableViewCell.swift */,
 				2449B68A26909CB2007B9CE1 /* ProjectsOverviewViewModel.swift */,
 			);
 			path = ProjectsOverviewScreen;
@@ -130,6 +142,9 @@
 			children = (
 				2449B6912690A1E6007B9CE1 /* UINavigationController+Extensions.swift */,
 				2449B69D2690B24A007B9CE1 /* UIControl+Extensions.swift */,
+				2449B6A62690FBB7007B9CE1 /* NSObject+Extensions.swift */,
+				2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */,
+				2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,6 +155,7 @@
 				2449B680269098B9007B9CE1 /* Coordinator.swift */,
 				2449B670269091EC007B9CE1 /* ViewController.swift */,
 				2449B68C26909F1E007B9CE1 /* View.swift */,
+				2449B6A42690FB25007B9CE1 /* TableViewCell.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -168,6 +184,13 @@
 				2449B6A02690D3E6007B9CE1 /* APIClient.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2449B6AE26910F72007B9CE1 /* ProjectDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProjectDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +262,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2449B6AB2690FD1F007B9CE1 /* UIView+Extensions.swift in Sources */,
 				2449B69A2690B1FF007B9CE1 /* UIControlSubscription.swift in Sources */,
 				2449B6922690A1E6007B9CE1 /* UINavigationController+Extensions.swift in Sources */,
 				2449B681269098B9007B9CE1 /* Coordinator.swift in Sources */,
+				2449B6A52690FB25007B9CE1 /* TableViewCell.swift in Sources */,
 				2449B6A12690D3E6007B9CE1 /* APIClient.swift in Sources */,
 				2449B69026909F8D007B9CE1 /* ProjectsOverviewCoordinator.swift in Sources */,
 				2449B671269091EC007B9CE1 /* ViewController.swift in Sources */,
@@ -249,12 +274,15 @@
 				2449B68726909C6E007B9CE1 /* ProjectsOverviewViewController.swift in Sources */,
 				2449B66D269091EC007B9CE1 /* AppDelegate.swift in Sources */,
 				2449B68D26909F1E007B9CE1 /* View.swift in Sources */,
+				2449B6AD26910BEA007B9CE1 /* Date+Extensions.swift in Sources */,
 				2449B69C2690B228007B9CE1 /* CombineCompatible.swift in Sources */,
 				2449B6972690B1D2007B9CE1 /* UIControlPublisher.swift in Sources */,
 				2449B66F269091EC007B9CE1 /* SceneDelegate.swift in Sources */,
 				2449B69E2690B24A007B9CE1 /* UIControl+Extensions.swift in Sources */,
+				2449B6A92690FC0A007B9CE1 /* ProjectTableViewCell.swift in Sources */,
 				2449B68926909C9F007B9CE1 /* ProjectsOverviewView.swift in Sources */,
 				2449B68B26909CB2007B9CE1 /* ProjectsOverviewViewModel.swift in Sources */,
+				2449B6A72690FBB7007B9CE1 /* NSObject+Extensions.swift in Sources */,
 				2449B6A32690E40E007B9CE1 /* RepositorySearchResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

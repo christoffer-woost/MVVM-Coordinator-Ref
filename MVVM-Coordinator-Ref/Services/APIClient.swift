@@ -105,6 +105,7 @@ struct ProjectsAPIRequest: RequestConvertable {
     
     var parameters: [String : String]? = [
         "q": "language:swift",
+        "sort": "stars",
         "per_page": "100"
     ]
 }
