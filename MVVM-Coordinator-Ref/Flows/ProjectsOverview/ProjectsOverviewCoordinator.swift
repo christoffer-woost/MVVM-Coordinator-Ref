@@ -35,7 +35,9 @@ class ProjectsOverviewCoordinator: Coordinator {
     }
     
     private func showProjectCoordinator(with item: Item) {
-        
+        let coordinator = ProjectDetailsCoordinator(navigationController: navigationController)
+        childCoordinators.append(coordinator)
+        coordinator.start()
     }
     
 }

@@ -31,6 +31,7 @@
 		2449B6A92690FC0A007B9CE1 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A82690FC0A007B9CE1 /* ProjectTableViewCell.swift */; };
 		2449B6AB2690FD1F007B9CE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */; };
 		2449B6AD26910BEA007B9CE1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */; };
+		2449B6B026910FE1007B9CE1 /* ProjectDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AF26910FE1007B9CE1 /* ProjectDetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		2449B6A82690FC0A007B9CE1 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2449B6AF26910FE1007B9CE1 /* ProjectDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		2449B6AE26910F72007B9CE1 /* ProjectDetails */ = {
 			isa = PBXGroup;
 			children = (
+				2449B6AF26910FE1007B9CE1 /* ProjectDetailsCoordinator.swift */,
 			);
 			path = ProjectDetails;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				2449B68326909BFD007B9CE1 /* AppCoordinator.swift in Sources */,
 				2449B68726909C6E007B9CE1 /* ProjectsOverviewViewController.swift in Sources */,
 				2449B66D269091EC007B9CE1 /* AppDelegate.swift in Sources */,
+				2449B6B026910FE1007B9CE1 /* ProjectDetailsCoordinator.swift in Sources */,
 				2449B68D26909F1E007B9CE1 /* View.swift in Sources */,
 				2449B6AD26910BEA007B9CE1 /* Date+Extensions.swift in Sources */,
 				2449B69C2690B228007B9CE1 /* CombineCompatible.swift in Sources */,
