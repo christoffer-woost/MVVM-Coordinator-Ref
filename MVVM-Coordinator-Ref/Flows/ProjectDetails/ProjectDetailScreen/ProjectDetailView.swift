@@ -17,4 +17,8 @@ class ProjectDetailView: View {
         
     ]}
     
+    override func configure() {
+        backgroundColor = .white
+    }
+    
 }
