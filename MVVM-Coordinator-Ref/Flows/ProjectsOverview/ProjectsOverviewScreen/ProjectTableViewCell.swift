@@ -67,10 +67,8 @@ class ProjectTableViewCell: TableViewCell {
     override func createConstraints() -> [NSLayoutConstraint] {[
         contentContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
         contentContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-        contentContainer.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-        contentContainer.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 8),
-        contentContainer.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: -8),
-        contentContainer.widthAnchor.constraint(lessThanOrEqualToConstant: 400),
+        contentContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+        contentContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
         
         verticalStack.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: 8),
         verticalStack.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -8),
