@@ -10,7 +10,7 @@ import Combine
 
 class ProjectsOverviewCoordinator: Coordinator {
     
-    private var cancellables: Set<AnyCancellable> = .init()
+    private var cancellables: [AnyCancellable] = .init()
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
@@ -37,6 +37,9 @@ class ProjectsOverviewCoordinator: Coordinator {
     private func showProjectCoordinator(with item: Item) {
         let coordinator = ProjectDetailsCoordinator(navigationController: navigationController)
         childCoordinators.append(coordinator)
+        coordinator.onFinished
+            .sink { [weak self] _ in self?.childCoordinators.removeAll(where: { $0 === coordinator }) }
+            .store(in: &cancellables)
         coordinator.start()
     }
     

@@ -32,6 +32,7 @@
 		2449B6AB2690FD1F007B9CE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */; };
 		2449B6AD26910BEA007B9CE1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */; };
 		2449B6B026910FE1007B9CE1 /* ProjectDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6AF26910FE1007B9CE1 /* ProjectDetailsCoordinator.swift */; };
+		2449B6B22691205D007B9CE1 /* Finishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6B12691205D007B9CE1 /* Finishing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		2449B6AA2690FD1F007B9CE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2449B6AC26910BEA007B9CE1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		2449B6AF26910FE1007B9CE1 /* ProjectDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsCoordinator.swift; sourceTree = "<group>"; };
+		2449B6B12691205D007B9CE1 /* Finishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finishing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				2449B680269098B9007B9CE1 /* Coordinator.swift */,
+				2449B6B12691205D007B9CE1 /* Finishing.swift */,
 				2449B670269091EC007B9CE1 /* ViewController.swift */,
 				2449B68C26909F1E007B9CE1 /* View.swift */,
 				2449B6A42690FB25007B9CE1 /* TableViewCell.swift */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2449B6AB2690FD1F007B9CE1 /* UIView+Extensions.swift in Sources */,
+				2449B6B22691205D007B9CE1 /* Finishing.swift in Sources */,
 				2449B69A2690B1FF007B9CE1 /* UIControlSubscription.swift in Sources */,
 				2449B6922690A1E6007B9CE1 /* UINavigationController+Extensions.swift in Sources */,
 				2449B681269098B9007B9CE1 /* Coordinator.swift in Sources */,

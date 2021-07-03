@@ -8,10 +8,12 @@
 import UIKit
 import Combine
 
-class ProjectDetailsCoordinator: Coordinator {
+class ProjectDetailsCoordinator: Coordinator, Finishing {
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    
+    var onFinished: PassthroughSubject<Void, Never> = .init()
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
