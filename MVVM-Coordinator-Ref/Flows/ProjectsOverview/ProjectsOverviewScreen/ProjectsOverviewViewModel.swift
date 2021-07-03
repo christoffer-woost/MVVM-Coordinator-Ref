@@ -29,8 +29,7 @@ class ProjectsOverviewViewModel: ProjectsOverviewViewModelInterface {
     }
     
     override func startUpdating() {
-        fetchCancalable = //Publishers.MergeMany(
-            Just(())
+        fetchCancalable = Just(())
             .receive(on: DispatchQueue.main)
             .map { _ in }
             .eraseToAnyPublisher()
@@ -47,7 +46,6 @@ class ProjectsOverviewViewModel: ProjectsOverviewViewModelInterface {
             })
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in
-                print("new proj: \(result.count)")
                 self?.projects = result
             }
     }

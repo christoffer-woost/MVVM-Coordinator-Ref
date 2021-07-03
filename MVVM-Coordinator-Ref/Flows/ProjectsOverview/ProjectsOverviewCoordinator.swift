@@ -35,7 +35,7 @@ class ProjectsOverviewCoordinator: Coordinator {
     }
     
     private func showProjectCoordinator(with item: Item) {
-        let coordinator = ProjectDetailsCoordinator(navigationController: navigationController)
+        let coordinator = ProjectDetailsCoordinator(navigationController: navigationController, project: item)
         childCoordinators.append(coordinator)
         coordinator.onFinished
             .sink { [weak self] _ in self?.childCoordinators.removeAll(where: { $0 === coordinator }) }
