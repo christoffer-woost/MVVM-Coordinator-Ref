@@ -17,6 +17,7 @@ class ProjectsOverviewView: View {
     lazy var tableView: UITableView = {
         let v = UITableView(frame: .zero, style: .plain)
         v.backgroundColor = .white
+        v.separatorStyle = .none
         v.refreshControl = refreshControl
         return v
     }()

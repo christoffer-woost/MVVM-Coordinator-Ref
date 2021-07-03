@@ -25,7 +25,9 @@ class ProjectsOverviewViewController: ViewController<ProjectsOverviewView> {
         customView.tableView.dataSource = self
         
         viewModel.$projects
+            .delay(for: 0, scheduler: DispatchQueue.main)
             .sink { [weak self] _ in
+                print(self?.viewModel.projects.count)
                 self?.customView.tableView.reloadData()
             }
             .store(in: &cancellables)
@@ -41,6 +43,24 @@ class ProjectsOverviewViewController: ViewController<ProjectsOverviewView> {
         viewModel.fetch()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.startUpdating()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.endUpdating()
+    }
+    
+    override var keyCommands: [UIKeyCommand]? {[
+        UIKeyCommand(title: "Reload", action: #selector(refresh), input: "r", modifierFlags: .command)
+    ]}
+    
+    @objc func refresh() {
+        viewModel.fetch()
+    }
+    
 }
 
 extension ProjectsOverviewViewController: UITableViewDataSource {
@@ -51,7 +71,7 @@ extension ProjectsOverviewViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = [UIColor.red, .blue, .yellow, .purple, .brown].randomElement()
+        cell.textLabel?.text = viewModel.projects[indexPath.row].name
         return cell
     }
     

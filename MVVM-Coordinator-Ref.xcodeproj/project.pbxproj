@@ -24,6 +24,8 @@
 		2449B69A2690B1FF007B9CE1 /* UIControlSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6992690B1FF007B9CE1 /* UIControlSubscription.swift */; };
 		2449B69C2690B228007B9CE1 /* CombineCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B69B2690B228007B9CE1 /* CombineCompatible.swift */; };
 		2449B69E2690B24A007B9CE1 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B69D2690B24A007B9CE1 /* UIControl+Extensions.swift */; };
+		2449B6A12690D3E6007B9CE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A02690D3E6007B9CE1 /* APIClient.swift */; };
+		2449B6A32690E40E007B9CE1 /* RepositorySearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6A22690E40E007B9CE1 /* RepositorySearchResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		2449B6992690B1FF007B9CE1 /* UIControlSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlSubscription.swift; sourceTree = "<group>"; };
 		2449B69B2690B228007B9CE1 /* CombineCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCompatible.swift; sourceTree = "<group>"; };
 		2449B69D2690B24A007B9CE1 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
+		2449B6A02690D3E6007B9CE1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2449B6A22690E40E007B9CE1 /* RepositorySearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +84,11 @@
 			children = (
 				2449B66C269091EC007B9CE1 /* AppDelegate.swift */,
 				2449B66E269091EC007B9CE1 /* SceneDelegate.swift */,
+				2449B6A22690E40E007B9CE1 /* RepositorySearchResponseModel.swift */,
 				2449B6982690B1EC007B9CE1 /* Helper */,
 				2449B6942690A6E8007B9CE1 /* Shared */,
 				2449B6932690A6DB007B9CE1 /* Extensions */,
+				2449B69F2690D389007B9CE1 /* Services */,
 				2449B68426909C38007B9CE1 /* Flows */,
 				2449B675269091EE007B9CE1 /* Assets.xcassets */,
 				2449B677269091EE007B9CE1 /* LaunchScreen.storyboard */,
@@ -154,6 +160,14 @@
 				2449B69B2690B228007B9CE1 /* CombineCompatible.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		2449B69F2690D389007B9CE1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2449B6A02690D3E6007B9CE1 /* APIClient.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,7 @@
 				2449B69A2690B1FF007B9CE1 /* UIControlSubscription.swift in Sources */,
 				2449B6922690A1E6007B9CE1 /* UINavigationController+Extensions.swift in Sources */,
 				2449B681269098B9007B9CE1 /* Coordinator.swift in Sources */,
+				2449B6A12690D3E6007B9CE1 /* APIClient.swift in Sources */,
 				2449B69026909F8D007B9CE1 /* ProjectsOverviewCoordinator.swift in Sources */,
 				2449B671269091EC007B9CE1 /* ViewController.swift in Sources */,
 				2449B68326909BFD007B9CE1 /* AppCoordinator.swift in Sources */,
@@ -240,6 +255,7 @@
 				2449B69E2690B24A007B9CE1 /* UIControl+Extensions.swift in Sources */,
 				2449B68926909C9F007B9CE1 /* ProjectsOverviewView.swift in Sources */,
 				2449B68B26909CB2007B9CE1 /* ProjectsOverviewViewModel.swift in Sources */,
+				2449B6A32690E40E007B9CE1 /* RepositorySearchResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
