@@ -58,7 +58,6 @@ struct Item: Codable {
     let hasIssues, hasProjects, hasDownloads, hasWiki: Bool
     let hasPages: Bool
     let forksCount: Int
-    let mirrorURL: JSONNull?
     let archived, disabled: Bool
     let openIssuesCount: Int
     let license: License?
@@ -129,7 +128,6 @@ struct Item: Codable {
         case hasWiki = "has_wiki"
         case hasPages = "has_pages"
         case forksCount = "forks_count"
-        case mirrorURL = "mirror_url"
         case archived, disabled
         case openIssuesCount = "open_issues_count"
         case license, forks
@@ -189,31 +187,3 @@ struct Owner: Codable {
         case siteAdmin = "site_admin"
     }
 }
-
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-

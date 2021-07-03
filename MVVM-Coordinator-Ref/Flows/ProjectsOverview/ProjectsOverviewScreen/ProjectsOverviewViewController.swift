@@ -31,7 +31,6 @@ class ProjectsOverviewViewController: ViewController<ProjectsOverviewView> {
         viewModel.$projects
             .delay(for: 0, scheduler: DispatchQueue.main)
             .sink { [weak self] _ in
-                print(self?.viewModel.projects.count)
                 self?.customView.tableView.reloadData()
             }
             .store(in: &cancellables)
