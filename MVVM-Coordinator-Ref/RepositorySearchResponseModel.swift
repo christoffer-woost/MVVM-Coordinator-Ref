@@ -63,7 +63,7 @@ struct Item: Codable {
     let license: License?
     let forks, openIssues, watchers: Int
     let defaultBranch: String
-    let score: Int
+    let score: Int?
 
     enum CodingKeys: String, CodingKey {
         case id

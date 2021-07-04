@@ -68,7 +68,15 @@ struct APIClient {
         let urlRequest = request.asURLRequest!
         return URLSession.shared
             .dataTaskPublisher(for: urlRequest)
-            .map { $0.data }
+            .map {
+                
+                do {
+                    _ = try decoder.decode(T.Response.self, from: $0.data)
+                } catch {
+                    print(error)
+                }
+                
+                return $0.data }
             .decode(type: T.Response.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()

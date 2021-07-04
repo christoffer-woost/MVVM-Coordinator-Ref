@@ -22,7 +22,38 @@ class ProjectDetailViewController: ViewController<ProjectDetailView> {
     }
     
     override func configure() {
+        viewModel.$project
+            .map { $0?.name }
+            .sink { [weak self] score in
+                self?.customView.titleLabel.text = score
+            }
+            .store(in: &cancellables)
         
+        viewModel.$project
+            .map { $0?.owner.login }
+            .sink { [weak self] data in
+                self?.customView.messageLabel.text = data
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$project
+            .map { $0?.stargazersCount }
+            .sink { data in
+                let starAttachment = NSTextAttachment()
+                starAttachment.image = UIImage(systemName: "star")
+                let starString = NSMutableAttributedString()
+                starString.append(NSAttributedString(attachment: starAttachment))
+                starString.append(NSAttributedString(string: " \(data ?? 0)"))
+                self.customView.starsLabel.attributedText = starString
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$project
+            .map { $0?.createdAt }
+            .sink { data in
+                self.customView.dateLabel.text = data?.dateString
+            }
+            .store(in: &cancellables)
     }
     
     override func viewDidAppear(_ animated: Bool) {
