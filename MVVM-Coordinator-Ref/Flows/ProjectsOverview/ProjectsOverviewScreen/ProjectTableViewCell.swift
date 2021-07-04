@@ -39,6 +39,7 @@ class ProjectTableViewCell: TableViewCell {
         let v = UIStackView()
         v.axis = .horizontal
         v.spacing = 8
+        v.distribution = .equalSpacing
         return v
     }()
     
