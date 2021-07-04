@@ -27,7 +27,7 @@ class ProjectDetailsCoordinator: Coordinator, Finishing {
     }
     
     func showProjectDetailScreen() {
-        let viewModel = ProjectDetailViewModelInterface(project: project)
+        let viewModel = ProjectDetailViewModel(project: project)
         let vc = ProjectDetailViewController(viewModel: viewModel)
         navigationController.present(vc, animated: true)
     }
