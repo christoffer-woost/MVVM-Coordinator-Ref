@@ -48,7 +48,7 @@ class ProjectTableViewCell: TableViewCell {
         return v
     }()
     
-    lazy var watchersLabel: UILabel = {
+    lazy var dateLabel: UILabel = {
         let v = UILabel()
         return v
     }()
@@ -62,7 +62,7 @@ class ProjectTableViewCell: TableViewCell {
         verticalStack.addArrangedSubview(messageLabel)
         verticalStack.addArrangedSubview(horizontalStack)
         horizontalStack.addArrangedSubview(starsLabel)
-        horizontalStack.addArrangedSubview(watchersLabel)
+        horizontalStack.addArrangedSubview(dateLabel)
     }
     
     override func createConstraints() -> [NSLayoutConstraint] {[

@@ -85,7 +85,7 @@ extension ProjectsOverviewViewController: UITableViewDataSource {
         starString.append(NSAttributedString(string: " \(data.stargazersCount)"))
         cell.starsLabel.attributedText = starString
         
-        cell.watchersLabel.text = data.createdAt?.dateString ?? ""
+        cell.dateLabel.text = data.createdAt?.dateString ?? ""
         
         return cell
     }
