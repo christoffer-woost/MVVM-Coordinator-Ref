@@ -109,3 +109,18 @@ struct ProjectsAPIRequest: RequestConvertable {
         "per_page": "100"
     ]
 }
+
+struct ProjectAPIRequest: RequestConvertable {
+    typealias Response = Item
+    
+    private var item: Item
+    
+    var path: String { "/repos/\(item.fullName)" }
+    var method: HTTPMethod = .get
+    
+    var parameters: [String : String]? = [:]
+    
+    init(item: Item) {
+        self.item = item
+    }
+}

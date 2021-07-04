@@ -25,4 +25,14 @@ class ProjectDetailViewController: ViewController<ProjectDetailView> {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.startUpdating()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.endUpdating()
+    }
+    
 }

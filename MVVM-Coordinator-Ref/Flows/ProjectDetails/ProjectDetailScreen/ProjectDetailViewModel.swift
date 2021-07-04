@@ -26,25 +26,24 @@ class ProjectDetailViewModel: ProjectDetailViewModelInterface {
     private var fetchCancalable: AnyCancellable?
     
     override func startUpdating() {
-//        fetchCancalable = Just(())
-//            .receive(on: DispatchQueue.main)
-//            .map { _ in }
-//            .eraseToAnyPublisher()
-//            .merge(with: Timer
-//                    .publish(every: 10, on: .main, in: .default)
-//                    .autoconnect()
-//                    .map{ _ in }
-//                    .eraseToAnyPublisher()
-//            )
-//            .flatMap({ [weak self] _ in
-//                APIClient.request(ProjectsAPIRequest())
-//                    .map { $0.items }
-//                    .replaceError(with: <#T##[Item]#>)
-//            })
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] result in
-//                self?.projects = result
-//            }
+        fetchCancalable = Just(())
+            .receive(on: DispatchQueue.main)
+            .map { _ in }
+            .eraseToAnyPublisher()
+            .merge(with: Timer
+                    .publish(every: 10, on: .main, in: .default)
+                    .autoconnect()
+                    .map{ _ in }
+                    .eraseToAnyPublisher()
+            )
+            .flatMap({ [weak self] _ in
+                APIClient.request(ProjectAPIRequest(item: self!.project))
+                    .replaceError(with: self!.project)
+            })
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] result in
+                self?.project = result
+            }
     }
     
     override func endUpdating() {
