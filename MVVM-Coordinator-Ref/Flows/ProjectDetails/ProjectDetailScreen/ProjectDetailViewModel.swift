@@ -10,10 +10,12 @@ import Combine
 
 class ProjectDetailViewModelInterface: ObservableObject {
     
-    @Published var project: Item
+    @Published var project: Item?
     
-    init(project: Item) {
-        self.project = project
+    var projectId: String
+    
+    init(projectId: String) {
+        self.projectId = projectId
     }
     
     func startUpdating() {}
@@ -37,8 +39,9 @@ class ProjectDetailViewModel: ProjectDetailViewModelInterface {
                     .eraseToAnyPublisher()
             )
             .flatMap({ [weak self] _ in
-                APIClient.request(ProjectAPIRequest(item: self!.project))
-                    .replaceError(with: self!.project)
+                APIClient.request(ProjectAPIRequest(projectId: self?.projectId ?? ""))
+                    .map { item -> Item? in item }
+                    .replaceError(with: nil)
             })
             .receive(on: DispatchQueue.main)
             .sink { [weak self] result in

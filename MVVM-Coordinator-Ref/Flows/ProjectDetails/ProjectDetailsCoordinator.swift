@@ -15,11 +15,11 @@ class ProjectDetailsCoordinator: Coordinator, Finishing {
     
     var onFinished: PassthroughSubject<Void, Never> = .init()
     
-    private var project: Item
+    private var projectId: String
     
-    required init(navigationController: UINavigationController, project: Item) {
+    required init(navigationController: UINavigationController, projectId: String) {
         self.navigationController = navigationController
-        self.project = project
+        self.projectId = projectId
     }
     
     func start() {
@@ -27,7 +27,7 @@ class ProjectDetailsCoordinator: Coordinator, Finishing {
     }
     
     func showProjectDetailScreen() {
-        let viewModel = ProjectDetailViewModel(project: project)
+        let viewModel = ProjectDetailViewModel(projectId: projectId)
         let vc = ProjectDetailViewController(viewModel: viewModel)
         navigationController.present(vc, animated: true)
     }

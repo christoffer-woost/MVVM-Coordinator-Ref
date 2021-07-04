@@ -113,14 +113,14 @@ struct ProjectsAPIRequest: RequestConvertable {
 struct ProjectAPIRequest: RequestConvertable {
     typealias Response = Item
     
-    private var item: Item
+    private var projectId: String
     
-    var path: String { "/repos/\(item.fullName)" }
+    var path: String { "/repos/\(projectId)" }
     var method: HTTPMethod = .get
     
     var parameters: [String : String]? = [:]
     
-    init(item: Item) {
-        self.item = item
+    init(projectId: String) {
+        self.projectId = projectId
     }
 }
