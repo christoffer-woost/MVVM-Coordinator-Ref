@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,6 @@
 		2449B6B52691259C007B9CE1 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6B42691259C007B9CE1 /* ProjectDetailViewController.swift */; };
 		2449B6B7269125A3007B9CE1 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6B6269125A3007B9CE1 /* ProjectDetailView.swift */; };
 		2449B6B9269125AF007B9CE1 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449B6B8269125AF007B9CE1 /* ProjectDetailViewModel.swift */; };
-		24E2CD30269242CB00E4D806 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 24E2CD2F269242CB00E4D806 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E2CD30269242CB00E4D806 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +233,6 @@
 			);
 			name = "MVVM-Coordinator-Ref";
 			packageProductDependencies = (
-				24E2CD2F269242CB00E4D806 /* SDWebImage */,
 			);
 			productName = "MVVM-Coordinator-Ref";
 			productReference = 2449B669269091EC007B9CE1 /* MVVM-Coordinator-Ref.app */;
@@ -265,7 +262,6 @@
 			);
 			mainGroup = 2449B660269091EC007B9CE1;
 			packageReferences = (
-				24E2CD2E269242CB00E4D806 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 2449B66A269091EC007B9CE1 /* Products */;
 			projectDirPath = "";
@@ -513,25 +509,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		24E2CD2E269242CB00E4D806 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.11.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		24E2CD2F269242CB00E4D806 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 24E2CD2E269242CB00E4D806 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2449B661269091EC007B9CE1 /* Project object */;
 }
