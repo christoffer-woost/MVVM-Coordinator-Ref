@@ -12,7 +12,7 @@ class View: UIView {
     init() {
         super.init(frame: .zero)
         createSubviews()
-        NSLayoutConstraint.activate(createConstraints())
+        applyConstraint()
         configure()
     }
     
@@ -21,6 +21,7 @@ class View: UIView {
     }
     
     func createSubviews() {}
+    func applyConstraint() { NSLayoutConstraint.activate(createConstraints()) }
     func createConstraints() -> [NSLayoutConstraint] { return [] }
     func configure() {}
     
