@@ -8,18 +8,7 @@
 import UIKit
 import Combine
 
-class ProjectsOverviewViewController: ViewController<ProjectsOverviewView> {
-    
-    let viewModel: ProjectsOverviewViewModelInterface
-    
-    init(viewModel: ProjectsOverviewViewModelInterface) {
-        self.viewModel = viewModel
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class ProjectsOverviewViewController: ViewController<ProjectsOverviewView, ProjectsOverviewViewModelInterface> {
     
     override func configure() {
         title = "Repositories"

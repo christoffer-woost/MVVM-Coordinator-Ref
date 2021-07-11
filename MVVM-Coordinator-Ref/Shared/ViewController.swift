@@ -8,13 +8,15 @@
 import UIKit
 import Combine
 
-class ViewController<ContainedView: UIView>: UIViewController {
+class ViewController<ContainedView: UIView, ViewModel: Any>: UIViewController {
     
     var customView: ContainedView { self.view as! ContainedView }
+    var viewModel: ViewModel
     
     var cancellables: Set<AnyCancellable> = .init()
     
-    init() {
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
